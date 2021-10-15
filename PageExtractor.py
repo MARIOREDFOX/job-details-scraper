@@ -61,9 +61,10 @@ def dataExtraction(url: str) -> list:
             except:
                 job_days = "30+ days ago"
             break
-
-    return [job_title, institution_name, job_location, job_type, job_salary, job_summary, job_days, key_data]
+    # To get the Extraction date
+    date = datetime.today()
+    return [job_title, institution_name, job_location, job_type, job_salary, job_summary, job_days, key_data, date]
 
 
 def field_entities() -> list:
-    return ["Job Title", "Institution Name", "Location", "Job Type", "Salary", "Summary", "Posted On", "Key Term Data"]
+    return ["Job Title", "Institution Name", "Location", "Job Type", "Salary", "Summary", "Posted On", "Key Term Data", "Date"]
